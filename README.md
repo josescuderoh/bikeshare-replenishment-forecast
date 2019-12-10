@@ -1,4 +1,4 @@
-# Toronto BikeShare Replenishment
+# Toronto Bikeshare Replenishment
 
 ## Introduction
 
@@ -8,16 +8,20 @@ According to the CBC, the project has required more than $ 27.5 million in publi
 
 Moving 5.000 bikes around 465 stations throughout Toronto is a major engineering and planning challenge to tackle. Therefore, predicting where, when and how many bikes should be moved from a station to another using their own data would be a major help for their operations department. *This report presents a methodology for modeling the bike demand along with examples of how it could be used for prediction in this system*. It also analyzes more in depth high demand months (June, July and August) and approximates the amount of bikes to be moved using existing data.
 
-
-
-## Data availability
+## Data Availability
 
 Since **public historical information about station status is not available**, in order to perform this analysis, we rely on different sources of information to approximate the variables of interest.
 
-1. Open data for 2017 ridership available [here](https://ckan0.cf.opendata.inter.prod-toronto.ca/download_resource/a1a0ee42-caf5-4395-abbc-58925c7434dd). This data was used to calculate the rate of change (explained below) for all stations.
+1. Open data for 2016 (Q3 and Q4) and 2017 (Q1 to Q4) ridership available [here](https://open.toronto.ca/dataset/bike-share-toronto-ridership-data/). This data was used to as input for predictions of bike demand at the stations of interest.
 
 2. Online data for stations general information available through an API [here](https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_information). This was used to update the information from 2017 with information from today regarding station capacity, coordinates, location, name, ID, among others.
 
-### Remarks
+## Required dependencies
+
+* **Data wrangling**: pandas, numpy, datetime, fuzzywuzzy, math, requests, json
+* **Viz**: matplotlib, seaborn
+* **Modeling**: scikit-learn
+
+## Remarks
 * Historic data for state of stations between 2011 and 2018 is available upon request [here](https://data.cdrc.ac.uk/dataset/toronto-bss), this application process is underway right now to further update the model and analysis.
 * Real-time data for stations' status (including bikes parked and available spots) available [here](https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_status)
