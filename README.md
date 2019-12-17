@@ -22,6 +22,19 @@ Since **public historical information about station status is not available**, i
 * **Viz**: matplotlib, seaborn
 * **Modeling**: scikit-learn
 
+
+## Data preprocessing higlights
+
+- Datatime formats did not match accross the dataset and contained multiple string errors, these were standardized and fixed.
+- Time continuity of records was tested.
+- Station IDs were missing for Q3 and Q4, these were included by matching stations with API endpoint for stations data and using brute-force string matching and `fuzzywuzzy` for partial string matching.
+- A new and more reliable `trip_duration` variable was created from timestamps.
+
+## EDA highlights
+
+-
+
+
 ## Remarks
 * Historic data for state of stations between 2011 and 2018 is available upon request [here](https://data.cdrc.ac.uk/dataset/toronto-bss), this application process is underway right now to further update the model and analysis.
 * Real-time data for stations' status (including bikes parked and available spots) available [here](https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_status)
