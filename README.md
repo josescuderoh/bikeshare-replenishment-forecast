@@ -27,9 +27,9 @@ Since **public historical information about station status is not available**, i
 * **Modeling**: `sklearn`
 
 
-## Data preprocessing higlights
+## Data preprocessing highlights
 
-- Datatime formats did not match accross the dataset and contained multiple string errors, these were standardized and fixed.
+- Timestamps formats did not match across the dataset and contained multiple string errors, these were standardized and fixed.
 - Time continuity of records was tested.
 - Station IDs were missing for Q3 and Q4, these were included by matching stations with API endpoint for stations data and using brute-force string matching and `fuzzywuzzy` for partial string matching.
 - A new and more reliable `trip_duration` variable was created from timestamps.
