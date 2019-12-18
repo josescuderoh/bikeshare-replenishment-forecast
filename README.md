@@ -27,7 +27,7 @@ Since **public historical information about station status is not available**, i
 * **Modeling**: `sklearn`
 
 
-## Data preprocessing highlights
+## Data [preprocessing](Code/Preprocessing.ipynb) highlights
 
 - Timestamps formats did not match across the dataset and contained multiple string errors, these were standardized and fixed.
 - Time continuity of records was tested.
@@ -35,7 +35,7 @@ Since **public historical information about station status is not available**, i
 - A new and more reliable `trip_duration` variable was created from timestamps.
 - Outliers were detected using two criteria (1) *false trips* criteria for short trips (trips with less than 1 minute duration) which is about 1.3% of the data and (2) *IQR* interquartile range for long trips (about 5% of the data).
 
-## EDA highlights
+## [EDA](Code/EDA.ipynb) highlights
 
 - The top 10 origin and destination stations were found. These 10 stations out of 266 (3.6%) account for the 13% and 14% of all trips, respectively. To create a first modeling approach, we will only analyze bike supply and demand for the top station, which is **Union Station**, accounting for a 2% and 2.6% as origin and destination, respectively.
 - During 2017, 63.102 bikes were taken from and to Union Station in total. Considering the 5.000 bikes available today, and Union Station's average of 172 bikes a day, with a maximum of nearly 500 bikes, *up to 10% of all bikes could be used* at this station alone. Furthermore, this mean goes up to 213 bikes during weekdays, which means trips are mainly skewed towards weekdays instead of weekends.
@@ -49,7 +49,7 @@ Since **public historical information about station status is not available**, i
 - Extreme values are present at 4 PM, the "ride back home", in which the station's capacity is exceeded. However, the "ride to work" is not symmetric to this number. This station is used for the trip back home more than the trip to work.
 - Wednesday is the day that presents the *most negative peaks* for rate of change, followed in similar magnitudes by Tuesday, Thursday and Monday. On a Friday is rare to have a bike surplus.
 
-## Modeling highlights
+## [Modeling](Code/Modeling.ipynb) highlights
 
 - ...
 
