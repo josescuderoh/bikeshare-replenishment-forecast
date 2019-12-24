@@ -17,8 +17,8 @@ Moving 5.000 bikes around 465 stations throughout Toronto is a major engineering
 Since **public historical information about station status is not available**, in order to perform this analysis, we rely on different sources of information to approximate the variables of interest.
 
 1. Open data for 2016 (Q3 and Q4) and 2017 (Q1 to Q4) ridership available [here](https://open.toronto.ca/dataset/bike-share-toronto-ridership-data/). This data was used to as input for predictions of bike demand at the stations of interest.
-
 2. Online data for stations general information available through an API [here](https://tor.publicbikesystem.net/ube/gbfs/v1/en/station_information). This was used to update the information from 2017 with information from today regarding station capacity, coordinates, location, name, ID, among others.
+3. Weather data for 2017 including hourly records of weather variables from the Government of Canada available [here](https://climate.weather.gc.ca/historical_data/search_historic_data_e.html).
 
 ## Required dependencies
 
