@@ -22,7 +22,7 @@ Since **public historical information about station status is not available**, i
 
 ## Required dependencies
 
-* **Data wrangling**: `pandas`,` numpy`, `datetime`, `fuzzywuzzy`, `math`, `requests`,` json`
+* **Data wrangling**: `pandas`,` numpy`, `datetime`, `fuzzywuzzy`, `math`, `requests`,` json`, `holidays`
 * **Viz**: `matplotlib`, `seaborn`
 * **Modeling**: `sklearn`
 
