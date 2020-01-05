@@ -31,14 +31,14 @@ Since **public historical information about station status is not available**, i
 
 - Timestamps formats did not match across the dataset and contained multiple string errors, these were standardized and fixed.
 - Time continuity of records was tested.
-- Station IDs were missing for Q3 and Q4, these were included by matching stations with API endpoint for stations data and using brute-force string matching and `fuzzywuzzy` for partial string matching.
+- Station IDs were missing for Q3 and Q4 of both 2016 and 2017, these were included by matching station names with names from current stations available through API endpoint,  and using brute-force string matching and `fuzzywuzzy` for partial string matching.
 - A new and more reliable `trip_duration` variable was created from timestamps.
 - Outliers were detected using two criteria (1) *false trips* criteria for short trips (trips with less than 1 minute duration) which is about 1.3% of the data and (2) *IQR* interquartile range for long trips (about 5% of the data).
 
 ## [EDA](Code/EDA.ipynb) highlights
 
 - The top 10 origin and destination stations were found. These 10 stations out of 266 (3.6%) account for the 13% and 14% of all trips, respectively. To create a first modeling approach, we will only analyze bike supply and demand for the top station, which is **Union Station**, accounting for a 2% and 2.6% as origin and destination, respectively.
-- During 2017, 63.102 bikes were taken from and to Union Station in total. Considering the 5.000 bikes available today, and Union Station's average of 172 bikes a day, with a maximum of nearly 500 bikes, *up to 10% of all bikes could be used* at this station alone. Furthermore, this mean goes up to 213 bikes during weekdays, which means trips are mainly skewed towards weekdays instead of weekends.
+- During 2017, more than 90K bikes were taken from and to Union Station in total. Considering the 5.000 bikes available today, and Union Station's average of 212 bikes a day, with a maximum of nearly 500 bikes, *up to 10% of all bikes could be used* at this station alone. Furthermore, this mean goes up to 220 bikes during weekdays, which means trips are mainly skewed towards weekdays instead of weekends.
 - A surrogate variable was created in order to approximate the demand of bikes at Union Station for every hour of every day of the year 2017. This variable is called **rate of change** and, is calculated as the amount of trips leaving the station minus the amount of trips arriving to the station. We will have a signed number that will describe the deficit or surplus of bikes for every hour, respectively.
 - Union Station has a -1.2 average rate of change, meaning that on average *more bikes will arrive to the station than those leaving the station*. In terms of operations, this station will have a surplus of bikes that need to be taken from the station. 
 - Peak hours present 49 bikes arriving to the station (almost twice the station's capacity) and 26 bikes leaving the station (full station capacity).
